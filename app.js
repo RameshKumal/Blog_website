@@ -7,7 +7,7 @@ const { render } = require('ejs');
 const app = express();
 
 //database connection
-const dburi = "mongodb+srv://rameshkc:ramesh07@cluster0.yhdqh8m.mongodb.net/cluster0?retryWrites=true&w=majority";
+const dburi = process.env.DB_URI;
 mongoose.connect(dburi)
 .then((result) => app.listen(3000))//listen request 
 .catch((err) => console.log(err));
